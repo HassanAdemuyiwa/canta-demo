@@ -28,7 +28,15 @@ const Navbar = () => {
     >
       <Flex w={["100vw", "100vw", "80vw", "80vw"]} justify="space-around">
         <Box>
-          <Image h="4vh" src="./canta-logo-blue.svg" alt="canta logo" />
+          <Image
+            h="4vh"
+            src={
+              colorMode === "light"
+                ? "./canta-logo-blue.svg"
+                : "./canta-logo-main.svg"
+            }
+            alt="canta logo"
+          />
         </Box>
         <Stack
           spacing={8}
@@ -44,19 +52,19 @@ const Navbar = () => {
             position="relative"
             opacity={router.pathname !== "/form" ? 0.4 : 1}
           >
-            <Link href="/">Form</Link>
+            <Link href="/form">Form</Link>
           </Box>
           <Box
             position="relative"
             opacity={router.pathname !== "/card" ? 0.4 : 1}
           >
-            <Link href="/">Card</Link>
+            <Link href="/card">Card</Link>
           </Box>
           <Box
             position="relative"
             opacity={router.pathname !== "/list" ? 0.4 : 1}
           >
-            <Link href="/">List</Link>
+            <Link href="/list">List</Link>
           </Box>
         </Stack>
         <Box>
