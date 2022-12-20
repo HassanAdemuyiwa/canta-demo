@@ -1,10 +1,15 @@
 // pages/_app.js
-import { ChakraProvider } from "@chakra-ui/react";
-
+import { ChakraProvider, Flex } from "@chakra-ui/react";
+import Navbar from "../components/Navbar";
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <Component {...pageProps} />
+      {/* <Flex direction="column" align="center" justify="center"> */}
+      <Navbar />
+      <Flex justify="center" align="center" w="100%" h="93vh">
+        <Component {...pageProps} />
+      </Flex>
+      {/* </Flex> */}
     </ChakraProvider>
   );
 }
